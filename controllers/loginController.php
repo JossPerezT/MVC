@@ -1,16 +1,20 @@
 <?php
 class loginController
 {
-
-    public function prueba()
-    {
-        echo "Hola";
+    public function __construct(){
+        require_once "models/loginModel.php";
+        $this->loginModel=new loginModel();
     }
-    public function prueba1()
-    {
+    public function ingresar(){
+        if(isset($_POST["usuario"])&& isset($_POST["contrasena"])){
+            $this->loginModel->validar($_POST);
 
-        echo "buenas tardes";
+        }
+        require_once "views/templates/header.php";
+        require_once "views/login.php";
+        require_once "views/templates/footer.php";
     }
+
 }
 
 ?>
