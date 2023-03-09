@@ -14,6 +14,10 @@
         require_once "views/templates/footer.php";
       }
 
+      public function save(){
+        var_dump($_POST);
+      }
+
   }
 
 ?>
