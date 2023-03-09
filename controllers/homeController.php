@@ -4,8 +4,10 @@ class homeController {
 session_start();
     }
 public function dashboard(){
-    echo "Hola";
-    var_dump($_SESSION);
+   require_once "views/templates/header.php";
+   require_once "views/templates/menu.php";
+   require_once "views/dashboard.php";
+   require_once "views/templates/footer.php";
 }
 }
 ?>
