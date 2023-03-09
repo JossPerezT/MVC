@@ -11,7 +11,6 @@ class loginController
            if(isset($resp["id_usuario"])){
             session_start();
             $_SESSION=$resp;
-            $_SESSION["Hola"]="Bienvenida";
             header("Location:../home/dashboard");
            }
         }
