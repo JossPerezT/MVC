@@ -7,8 +7,7 @@ class loginController
     }
     public function ingresar(){
         if(isset($_POST["usuario"])&& isset($_POST["contrasena"])){
-            $this->loginModel->validar($_POST);
-
+           $resp=$this->loginModel->validar($_POST);
         }
         require_once "views/templates/header.php";
         require_once "views/login.php";

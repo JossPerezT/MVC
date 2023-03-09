@@ -11,4 +11,13 @@
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
     </form>
+
+    <?php 
+     if(isset($resp['error_usuario'])){
+      ?>
+      <div class="alert alert-danger" role="alert">
+      <?=$resp['error_usuario'];?>
+</div>
+     <?php }       
+    ?> 
    
