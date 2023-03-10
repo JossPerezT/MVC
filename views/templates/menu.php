@@ -12,7 +12,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="../clientes/registrar">Registrar</a></li>
-            <li><a class="dropdown-item" href="#">Listar</a></li>
+            <li><a class="dropdown-item" href="../clientes/listar">Listar</a></li>
           </ul>
         </li>
       </ul>

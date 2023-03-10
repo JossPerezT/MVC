@@ -22,7 +22,8 @@
                 $data['error_usuario']="El usuario no existe"; 
              }
              return $data;
+            
             }
-    }
-
+            
+        }
 ?>

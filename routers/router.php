@@ -29,5 +29,6 @@ class router
         $controller->$method();
     }
 }
+//$_SESSION
 
 ?>

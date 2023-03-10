@@ -21,6 +21,14 @@
         echo json_encode($respuesta);
       }
 
+      public function listar(){
+        $mostrarClientes= $this->clientesModel->getClients();
+require_once "views/templates/header.php";
+require_once "views/templates/menu.php";
+require_once "views/listar.php";
+require_once "views/templates/footer.php";
+      }
+
   }
 
 ?>
