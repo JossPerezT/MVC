@@ -27,15 +27,15 @@
         foreach ($mostrarClientes["id_cliente"] as $i =>$cliente) {  ?>
       <tr>
       <td><?=$i+1 ?></td>
-       <td><?=$mostrarClientes["nombre"][$i]?></td>
-       <td><?=$mostrarClientes["email"][$i]?></td>
-       <td><?=$mostrarClientes["telefono"][$i]?></td>
-       <td><?=$mostrarClientes["direccion"][$i]?></td>
-       <td><?=$mostrarClientes["rfc"][$i]?></td>
+       <td class="nombre-<?=$cliente?>"><?=$mostrarClientes["nombre"][$i]?></td>
+       <td class="email-<?=$cliente?>"><?=$mostrarClientes["email"][$i]?></td>
+       <td class="telefono-<?=$cliente?>"><?=$mostrarClientes["telefono"][$i]?></td>
+       <td class="direccion-<?=$cliente?>"></td><?=$mostrarClientes["direccion"][$i]?></td>
+       <td class="rfc-<?=$cliente?>"><?=$mostrarClientes["rfc"][$i]?></td>
        <td><?=$mostrarClientes["fecha_registro"][$i]?></td>
        <td><?=$mostrarClientes["fecha_actualizacion"][$i]?></td>
        <td><?=$mostrarClientes["fecha_eliminacion"][$i]?></td>
-       <td><?=$mostrarClientes["status"][$i]?></td>
+       <td class="<?=$mostrarClientes["statusColor"][$i]?> status<?=$cliente?>"><?=$mostrarClientes["statusMensaje"][$i]?></td>
     <td>
     <i class="bi bi-pencil-square editar editar-<?=$cliente?>"  data-idcliente="<?=$cliente?>" ></i>  
     <i class="bi bi-x-circle cancelar cancelar-<?=$cliente?>" data-idcliente="<?=$cliente?>" style="display: none;" ></i>

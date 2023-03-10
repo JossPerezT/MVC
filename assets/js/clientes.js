@@ -65,8 +65,11 @@ $(document).ready(function(){
         });
     });
 $(".editar").click(function(){
-
-    
+    var idCliente = $(this).data("idcliente");
+    $(".editar-"+idCliente).hide();
+    $(".eliminar-"+idCliente).hide();
+    $(".cancelar-"+idCliente).show();
+    $(".guardar-"+idCliente).show();
 });
 
 });

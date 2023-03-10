@@ -13,7 +13,7 @@
             return "Cliente registrado";
         }
         public function getClients(){
-            $query="SELECT * FROM clientes";
+            $query="SELECT *, if(status=1, 'ACTIVO', 'INACTIVO') AS statusMensaje, if(status=1,'bg-success', 'bg-warning') AS statusColor FROM clientes";
             $resp= mysqli_query($this->con,$query);
             if (mysqli_num_rows($resp)>0) {
                 $i=0;
@@ -27,7 +27,8 @@
                     $data["fecha_registro"][$i]=$row["fecha_registro"];
                     $data["fecha_actualizacion"][$i]=$row["fecha_actualizacion"];
                     $data["fecha_eliminacion"][$i]=$row["fecha_eliminacion"];
-                    $data["status"][$i]=$row["status"];
+                    $data["statusMensaje"][$i]=$row["statusMensaje"];
+                    $data["statusColor"][$i]=$row["statusColor"];
                 
                 $i++;
                 }
