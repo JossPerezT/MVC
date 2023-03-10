@@ -3,6 +3,8 @@
   class clientesController{
       
       public function __construct(){
+        require_once("models/clientesModel.php");
+        $this->clientesModel=new clientesModel();
           $this->urlJS = "../assets/js/clientes.js";
       }
 
@@ -15,7 +17,7 @@
       }
 
       public function save(){
-        var_dump($_POST);
+        $this->clientesModel->saveClient($_POST);
       }
 
   }
