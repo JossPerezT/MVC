@@ -10,7 +10,7 @@
         public function saveClient($datos){
             $query="INSERT INTO clientes(nombre,email,telefono,direccion,rfc,fecha_registro) VALUES ('".$datos['nombre']."','".$datos['email']."','".$datos['telefono']."','".$datos['direccion']."','".$datos['rfc']."','".$this->fecha."')";
             mysqli_query($this->con,$query);
-            return true;
+            return "Cliente registrado";
         }
     }
 ?>

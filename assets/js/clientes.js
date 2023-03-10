@@ -17,13 +17,48 @@ $(document).ready(function(){
         var direccion= $(".direccion").val();
         var rfc= $(".rfc").val();
 
+        if(nombre == ""){
+            $("#mensajeSistemasHeader").addClass("alert alert-warning");
+            $("#infoSistema").html("Favor de llenar el campo del nombre");
+            $("#mensajeSistemas").modal("show");
+            exit();
+        }
+        if(email == ""){
+            $("#mensajeSistemasHeader").addClass("alert alert-warning");
+            $("#infoSistema").html("Favor de llenar el campo del email");
+            $("#mensajeSistemas").modal("show");
+            exit();
+        }
+        if(telefono == ""){
+            $("#mensajeSistemasHeader").addClass("alert alert-warning");
+            $("#infoSistema").html("Favor de llenar el campo del telefono");
+            $("#mensajeSistemas").modal("show");
+            exit();
+        }
+        if(direccion == ""){
+            $("#mensajeSistemasHeader").addClass("alert alert-warning");
+            $("#infoSistema").html("Favor de llenar el campo del direccion");
+            $("#mensajeSistemas").modal("show");
+            exit();
+        }
+        if(rfc == ""){
+            $("#mensajeSistemasHeader").addClass("alert alert-warning");
+            $("#infoSistema").html("Favor de llenar el campo del rfc");
+            $("#mensajeSistemas").modal("show");
+            exit();
+        }
+
         $.ajax({
             url: "../clientes/save", 
             data: {nombre: nombre, email:email, telefono:telefono, direccion:direccion, rfc:rfc},
             type: "POST",
             dataType: "json",
             success: function(res){
-
+                $("#mensajeSistemasHeader").removeClass("alert alert-warning");
+                $("#mensajeSistemasHeader").addClass("alert alert-success");
+                $("#infoSistema").html(res);
+                $("#mensajeSistemas").modal("show");
+                $("#formClientes")[0].reset();
             },
             error: function(xhr, status){}
 

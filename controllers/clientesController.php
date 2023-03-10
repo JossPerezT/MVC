@@ -17,7 +17,8 @@
       }
 
       public function save(){
-        $this->clientesModel->saveClient($_POST);
+        $respuesta = $this->clientesModel->saveClient($_POST);
+        echo json_encode($respuesta);
       }
 
   }
