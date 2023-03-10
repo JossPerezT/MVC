@@ -25,7 +25,8 @@
         //$i alias
         //=> reasignación de la variable
         foreach ($mostrarClientes["id_cliente"] as $i =>$cliente) {  ?>
-       <td><?=$i+1 ?></td>
+      <tr>
+      <td><?=$i+1 ?></td>
        <td><?=$mostrarClientes["nombre"][$i]?></td>
        <td><?=$mostrarClientes["email"][$i]?></td>
        <td><?=$mostrarClientes["telefono"][$i]?></td>
@@ -42,6 +43,7 @@
     <i class="bi bi-trash3 eliminar eliminar-<?=$cliente?>" data-idcliente="<?=$cliente?>"></i>
    
 </td>
+</tr>
        
 
 
