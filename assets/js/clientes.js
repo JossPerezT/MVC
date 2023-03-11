@@ -70,6 +70,16 @@ $(".editar").click(function(){
     $(".eliminar-"+idCliente).hide();
     $(".cancelar-"+idCliente).show();
     $(".guardar-"+idCliente).show();
+    $(".nombre-"+idCliente).html('<input type="text" value="'+$(".nombre-"+idCliente).html()+'">');
+    $(".email-"+idCliente).html('<input type="text" value="'+$(".email-"+idCliente).html()+'">');
+    $(".telefono-"+idCliente).html('<input type="text" value="'+$(".telefono-"+idCliente).html()+'">');
+    $(".direccion-"+idCliente).html('<input type="text" value="'+$(".direccion-"+idCliente).html()+'">');
+    $(".rfc-"+idCliente).html('<input type="text" value="'+$(".rfc-"+idCliente).html()+'">');
+    var status = $(".status"+idCliente).html();
+    var select ="";
+    select +='<select class="form-select" aria-label="Default select example">';
+    
+
 });
 
 });

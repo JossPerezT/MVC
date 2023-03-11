@@ -30,7 +30,7 @@
        <td class="nombre-<?=$cliente?>"><?=$mostrarClientes["nombre"][$i]?></td>
        <td class="email-<?=$cliente?>"><?=$mostrarClientes["email"][$i]?></td>
        <td class="telefono-<?=$cliente?>"><?=$mostrarClientes["telefono"][$i]?></td>
-       <td class="direccion-<?=$cliente?>"></td><?=$mostrarClientes["direccion"][$i]?></td>
+       <td class="direccion-<?=$cliente?>"><?=$mostrarClientes["direccion"][$i]?></td>
        <td class="rfc-<?=$cliente?>"><?=$mostrarClientes["rfc"][$i]?></td>
        <td><?=$mostrarClientes["fecha_registro"][$i]?></td>
        <td><?=$mostrarClientes["fecha_actualizacion"][$i]?></td>
