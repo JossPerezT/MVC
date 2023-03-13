@@ -7,7 +7,3 @@ $url = substr($urlPath, strlen($folderPath));
 
 //variable constantante:
 define("URL", $url);
-
-
-
-?>
