@@ -93,5 +93,10 @@ $(".editar").click(function(){
     
 
 });
+$(".cancelar").click(function(){
+    
+
+})
+
 
 });

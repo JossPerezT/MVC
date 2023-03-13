@@ -10,4 +10,3 @@ public function dashboard(){
    require_once "views/templates/footer.php";
 }
 }
-?>
