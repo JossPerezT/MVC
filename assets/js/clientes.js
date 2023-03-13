@@ -76,8 +76,20 @@ $(".editar").click(function(){
     $(".direccion-"+idCliente).html('<input type="text" value="'+$(".direccion-"+idCliente).html()+'">');
     $(".rfc-"+idCliente).html('<input type="text" value="'+$(".rfc-"+idCliente).html()+'">');
     var status = $(".status"+idCliente).html();
+    var selected_1 = "";
+    var selected_0 = "";
+    if(status == "ACTIVO"){
+        selected_1 = "selected";
+    }
+    if (status == "INACTIVO"){
+        selected_0 = "selected";
+    }
     var select ="";
-    select +='<select class="form-select" aria-label="Default select example">';
+    select +='<select class="form-select" style="width: 120%" aria-label="Default select example">';
+    select +='<option value="1" '+selected_1+'>ACTIVO</option>';
+    select += '<option value="0" '+selected_0+'>INACTIVO</option>';
+    select += '</select>';
+    $(".status"+idCliente).html(select);
     
 
 });

@@ -8,8 +8,8 @@
       <th scope="col">Dirección</th>
       <th scope="col">RFC</th>
       <th scope="col">Fecha de <br>Registro</th>
-      <th scope="col">Fecha de <br>Actualización</th>
-      <th scope="col">Fecha de <br>Eliminación</th>
+      <!-- <th scope="col">Fecha de <br>Actualización</th>
+      <th scope="col">Fecha de <br>Eliminación</th> -->
       <th scope="col">Status</th>
       <th scope="col">Acción</th>
     </tr>
@@ -33,8 +33,8 @@
        <td class="direccion-<?=$cliente?>"><?=$mostrarClientes["direccion"][$i]?></td>
        <td class="rfc-<?=$cliente?>"><?=$mostrarClientes["rfc"][$i]?></td>
        <td><?=$mostrarClientes["fecha_registro"][$i]?></td>
-       <td><?=$mostrarClientes["fecha_actualizacion"][$i]?></td>
-       <td><?=$mostrarClientes["fecha_eliminacion"][$i]?></td>
+       <!-- <td><?=$mostrarClientes["fecha_actualizacion"][$i]?></td> 
+       <td><?=$mostrarClientes["fecha_eliminacion"][$i]?></td> -->
        <td class="<?=$mostrarClientes["statusColor"][$i]?> status<?=$cliente?>"><?=$mostrarClientes["statusMensaje"][$i]?></td>
     <td>
     <i class="bi bi-pencil-square editar editar-<?=$cliente?>"  data-idcliente="<?=$cliente?>" ></i>  
