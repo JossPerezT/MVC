@@ -8,7 +8,6 @@ class router
     public function __construct()
     {
         $this->matchRoute();
-        
     }
     public function matchRoute()
     {
@@ -18,17 +17,16 @@ class router
         $method = explode("?", $url[2]);
         $this->method = $method[0];
 
-        $this->controller = $this->controller ."Controller";
+        $this->controller = $this->controller . "Controller";
         require_once "controllers/" . $this->controller . ".php";
     }
 
-   public function run(){ 
-      
+    public function run()
+    {
+
         $controller = new $this->controller();
         $method = $this->method;
         $controller->$method();
     }
 }
 //$_SESSION
-
-?>

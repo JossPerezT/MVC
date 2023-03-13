@@ -23,4 +23,3 @@
         <button type="submit" class="btn btn-primary registrar">Registrar</button>
     </form>
 </div>
-
