@@ -33,4 +33,8 @@ class clientesController
     require_once "views/listar.php";
     require_once "views/templates/footer.php";
   }
+
+  public function actualizar(){
+    
+  }
 }

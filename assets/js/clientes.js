@@ -1,4 +1,5 @@
 $(document).ready(function(){
+    var datos = {};
    /* $("body").click(function(){
         alert("diste click en el body");
     });*/
@@ -47,22 +48,11 @@ $(document).ready(function(){
             $("#mensajeSistemas").modal("show");
             exit();
         }
-
-        $.ajax({
-            url: "../clientes/save", 
-            data: {nombre: nombre, email:email, telefono:telefono, direccion:direccion, rfc:rfc},
-            type: "POST",
-            dataType: "json",
-            success: function(res){
-                $("#mensajeSistemasHeader").removeClass("alert alert-warning");
-                $("#mensajeSistemasHeader").addClass("alert alert-success");
-                $("#infoSistema").html(res);
-                $("#mensajeSistemas").modal("show");
-                $("#formClientes")[0].reset();
-            },
-            error: function(xhr, status){}
-
-        });
+        datos.url = "../clientes/save";
+        datos.data = {nombre: nombre, email: email, telefono: telefono, direccion: direccion, rfc: rfc};
+        datos.type = "POST";
+        datos.accion = "save";
+        peticionAjax(datos);
     });
 $(".editar").click(function(){
     var idCliente = $(this).data("idcliente");
@@ -70,11 +60,11 @@ $(".editar").click(function(){
     $(".eliminar-"+idCliente).hide();
     $(".cancelar-"+idCliente).show();
     $(".guardar-"+idCliente).show();
-    $(".nombre-"+idCliente).html('<input type="text" value="'+$(".nombre-"+idCliente).html()+'">');
-    $(".email-"+idCliente).html('<input type="text" value="'+$(".email-"+idCliente).html()+'">');
-    $(".telefono-"+idCliente).html('<input type="text" value="'+$(".telefono-"+idCliente).html()+'">');
-    $(".direccion-"+idCliente).html('<input type="text" value="'+$(".direccion-"+idCliente).html()+'">');
-    $(".rfc-"+idCliente).html('<input type="text" value="'+$(".rfc-"+idCliente).html()+'">');
+    $(".nombre-"+idCliente).html('<input type="text" class="nombrecliente'+idCliente+'" value="'+$(".nombre-"+idCliente).html()+'">');
+    $(".email-"+idCliente).html('<input type="text" class="emailcliente'+idCliente+'" value="'+$(".email-"+idCliente).html()+'">');
+    $(".telefono-"+idCliente).html('<input type="text" class="telefonocliente'+idCliente+'" value="'+$(".telefono-"+idCliente).html()+'">');
+    $(".direccion-"+idCliente).html('<input type="text" class="direccioncliente'+idCliente+'" value="'+$(".direccion-"+idCliente).html()+'">');
+    $(".rfc-"+idCliente).html('<input type="text" class="rfccliente'+idCliente+'" value="'+$(".rfc-"+idCliente).html()+'">');
     var color = $(this).data("color");
     var status = $(".status"+idCliente).html();
     var selected_1 = "";
@@ -87,7 +77,7 @@ $(".editar").click(function(){
     }
     $(".status"+idCliente).removeClass(color);
     var select ="";
-    select +='<select class="form-select" style="width: 120%" aria-label="Default select example">';
+    select +='<select class="form-select statuscliente'+idCliente+'" style="width: 120%" aria-label="Default select example">';
     select +='<option value="1" '+selected_1+'>ACTIVO</option>';
     select += '<option value="0" '+selected_0+'>INACTIVO</option>';
     select += '</select>';
@@ -117,7 +107,47 @@ $(".cancelar").click(function(){
     $(".status"+idCliente).html(status);
     $(".status"+idCliente).addClass(color);
 
-})
+});
+
+$("#guardar").click(function(){
+    var idCliente = $(this).data("idcliente");
+    var nombre = $(".nombrecliente"+idCliente).val();
+    var email = $(".emailcliente"+idCliente).val();
+    var telefono = $(".telefonocliente"+idCliente).val();
+    var direccion = $(".direccioncliente"+idCliente).val();
+    var rfc = $(".rfccliente"+idCliente).val();
+    var status = $("statuscliente"+idCliente).val();
+    datos.url = "../clientes/actualizar";
+    datos.data = {idCliente:idCliente, nombre:nombre, email:email, telefono:telefono, direccion:direccion, rfc:rfc, status:status};
+    datos.type = "POST";
+    peticionAjax(datos);
+
+    
+
+});
+
+
 
 
 });
+function peticionAjax(datos){
+    $.ajax({
+        url: datos.url, 
+        data: datos.data,
+        type: datos.type,
+        dataType: "json",
+        success: function(res){
+           switch(datos.accion){
+            case "save":
+                $("#mensajeSistemasHeader").removeClass("alert alert-warning");
+                $("#mensajeSistemasHeader").addClass("alert alert-success");
+                $("#infoSistema").html(res);
+                $("#mensajeSistemas").modal("show");
+                $("#formClientes")[0].reset();
+                break;
+           }
+        },
+        error: function(xhr, status){}
+
+    });
+}
