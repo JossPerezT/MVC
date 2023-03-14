@@ -123,9 +123,11 @@ $(".guardar").click(function(){
     $(".direccion-"+idCliente).html(direccion);
     $(".rfc-"+idCliente).html(rfc);
     if (status == 0) {
+        $(".status"+idCliente).removeClass("bg-success");
         $(".status"+idCliente).addClass("bg-warning");
         $(".status"+idCliente).html("INACTIVO");
     }else{
+        $(".status"+idCliente).removeClass("bg-warning");
         $(".status"+idCliente).addClass("bg-success");
         $(".status"+idCliente).html("ACTIVO");
     }
