@@ -35,6 +35,7 @@ class clientesController
   }
 
   public function actualizar(){
-    
+    $respuesta = $this->clientesModel->updateClient($_POST);
+    echo json_encode($respuesta);
   }
 }

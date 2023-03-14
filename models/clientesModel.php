@@ -42,4 +42,11 @@ class clientesModel
 
         return $data;
     }
+
+    public function updateClient($datos)
+    {
+        $query = "UPDATE clientes SET nombre='" . $datos['nombre'] . "',email='" . $datos['email'] . "',telefono='" . $datos['telefono'] . "',direccion='" . $datos['direccion'] . "',rfc='" . $datos['rfc'] . "',fecha_actualizacion='" . $this->fecha . "',status='" . $datos['status'] . "' WHERE id_cliente='" . $datos['idCliente'] . "'";
+        mysqli_query($this->con, $query);
+        return "Cliente actualizado";
+    }
 }

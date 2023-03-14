@@ -109,21 +109,35 @@ $(".cancelar").click(function(){
 
 });
 
-$("#guardar").click(function(){
+$(".guardar").click(function(){
     var idCliente = $(this).data("idcliente");
     var nombre = $(".nombrecliente"+idCliente).val();
     var email = $(".emailcliente"+idCliente).val();
     var telefono = $(".telefonocliente"+idCliente).val();
     var direccion = $(".direccioncliente"+idCliente).val();
     var rfc = $(".rfccliente"+idCliente).val();
-    var status = $("statuscliente"+idCliente).val();
+    var status = $(".statuscliente"+idCliente).val();
+    $(".nombre-"+idCliente).html(nombre);
+    $(".email-"+idCliente).html(email);
+    $(".telefono-"+idCliente).html(telefono);
+    $(".direccion-"+idCliente).html(direccion);
+    $(".rfc-"+idCliente).html(rfc);
+    if (status == 0) {
+        $(".status"+idCliente).addClass("bg-warning");
+        $(".status"+idCliente).html("INACTIVO");
+    }else{
+        $(".status"+idCliente).addClass("bg-success");
+        $(".status"+idCliente).html("ACTIVO");
+    }
+    $(".cancelar-"+idCliente).hide();
+    $(".guardar-"+idCliente).hide();
+    $(".editar-"+idCliente).show();
+    $(".eliminar-"+idCliente).show();
+    datos.accion = "update";
     datos.url = "../clientes/actualizar";
     datos.data = {idCliente:idCliente, nombre:nombre, email:email, telefono:telefono, direccion:direccion, rfc:rfc, status:status};
     datos.type = "POST";
     peticionAjax(datos);
-
-    
-
 });
 
 
@@ -144,6 +158,12 @@ function peticionAjax(datos){
                 $("#infoSistema").html(res);
                 $("#mensajeSistemas").modal("show");
                 $("#formClientes")[0].reset();
+                break;
+            case "update":
+                $("#mensajeSistemasHeader").removeClass("alert alert-warning");
+                $("#mensajeSistemasHeader").addClass("alert alert-success");
+                $("#infoSistema").html(res);
+                $("#mensajeSistemas").modal("show");
                 break;
            }
         },
