@@ -43,4 +43,8 @@ class clientesController
     $respuesta = $this->clientesModel->deleteClient($_POST['idCliente']);
     echo json_encode($respuesta);
   }
+
+  /*
+    Rama Serv
+  */
 }
