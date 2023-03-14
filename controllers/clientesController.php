@@ -38,4 +38,9 @@ class clientesController
     $respuesta = $this->clientesModel->updateClient($_POST);
     echo json_encode($respuesta);
   }
+
+  public function eliminar(){
+    $respuesta = $this->clientesModel->deleteClient($_POST['idCliente']);
+    echo json_encode($respuesta);
+  }
 }

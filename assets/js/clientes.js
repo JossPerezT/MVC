@@ -140,7 +140,17 @@ $(".guardar").click(function(){
     peticionAjax(datos);
 });
 
-
+$(".eliminar").click(function(){
+    var idCliente = $(this).data("idcliente");
+    datos.accion = "delete";
+    datos.url = "../clientes/eliminar";
+    datos.data = {idCliente:idCliente};
+    datos.type = "POST";
+    $(".status"+idCliente).removeClass("bg-success");
+    $(".status"+idCliente).addClass("bg-warning");
+    $(".status"+idCliente).html("INACTIVO");
+    peticionAjax(datos);
+});
 
 
 });
@@ -161,6 +171,12 @@ function peticionAjax(datos){
                 break;
             case "update":
                 $("#mensajeSistemasHeader").removeClass("alert alert-warning");
+                $("#mensajeSistemasHeader").addClass("alert alert-success");
+                $("#infoSistema").html(res);
+                $("#mensajeSistemas").modal("show");
+                break;
+            case "delete":
+                $("#mensajeSistemasHeader").removeClass("alert alert-success");
                 $("#mensajeSistemasHeader").addClass("alert alert-success");
                 $("#infoSistema").html(res);
                 $("#mensajeSistemas").modal("show");

@@ -49,4 +49,10 @@ class clientesModel
         mysqli_query($this->con, $query);
         return "Cliente actualizado";
     }
+
+    public function deleteClient($idCliente){
+        $query = "UPDATE clientes SET status = 0 WHERE id_cliente = " . $idCliente;
+        mysqli_query($this->con, $query);
+        return "Cliente eliminado";
+    }
 }
