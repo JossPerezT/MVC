@@ -32,12 +32,11 @@
           <td class="direccion-<?= $cliente ?>"><?= $mostrarClientes["direccion"][$i] ?></td>
           <td class="rfc-<?= $cliente ?>"><?= $mostrarClientes["rfc"][$i] ?></td>
           <td><?= $mostrarClientes["fecha_registro"][$i] ?></td>
-          <td><?= $mostrarClientes["fecha_actualizacion"][$i] ?></td>
-          <td><?= $mostrarClientes["fecha_eliminacion"][$i] ?></td>
+
           <td class="<?= $mostrarClientes["statusColor"][$i] ?> status<?= $cliente ?>"><?= $mostrarClientes["statusMensaje"][$i] ?></td>
           <td>
-            <i class="bi bi-pencil-square editar editar-<?= $cliente ?>" data-idcliente="<?= $cliente ?>"></i>
-            <i class="bi bi-x-circle cancelar cancelar-<?= $cliente ?>" data-idcliente="<?= $cliente ?>" style="display: none;"></i>
+            <i class="bi bi-pencil-square editar editar-<?= $cliente ?>" data-idcliente="<?= $cliente ?>" data-color="<?=$mostrarClientes["statusColor"][$i]?>"></i>
+            <i class="bi bi-x-circle cancelar cancelar-<?= $cliente ?>" data-idcliente="<?= $cliente ?>" data-nombre="<?=$mostrarClientes["nombre"][$i]?>" data-email="<?=$mostrarClientes["email"][$i]?>" data-telefono="<?=$mostrarClientes["telefono"][$i]?>" data-direccion="<?=$mostrarClientes["direccion"][$i]?>" data-rfc="<?=$mostrarClientes["rfc"][$i]?>" data-statusmensaje="<?=$mostrarClientes["statusMensaje"][$i]?>" data-color="<?=$mostrarClientes["statusColor"][$i]?>" style="display: none;"></i>
             <i class="bi bi-bag-check-fill guardar guardar-<?= $cliente ?> " data-idcliente="<?= $cliente ?>" style="display: none;"></i>
             <i class="bi bi-trash3 eliminar eliminar-<?= $cliente ?>" data-idcliente="<?= $cliente ?>"></i>
 

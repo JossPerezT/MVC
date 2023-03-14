@@ -75,6 +75,7 @@ $(".editar").click(function(){
     $(".telefono-"+idCliente).html('<input type="text" value="'+$(".telefono-"+idCliente).html()+'">');
     $(".direccion-"+idCliente).html('<input type="text" value="'+$(".direccion-"+idCliente).html()+'">');
     $(".rfc-"+idCliente).html('<input type="text" value="'+$(".rfc-"+idCliente).html()+'">');
+    var color = $(this).data("color");
     var status = $(".status"+idCliente).html();
     var selected_1 = "";
     var selected_0 = "";
@@ -84,6 +85,7 @@ $(".editar").click(function(){
     if (status == "INACTIVO"){
         selected_0 = "selected";
     }
+    $(".status"+idCliente).removeClass(color);
     var select ="";
     select +='<select class="form-select" style="width: 120%" aria-label="Default select example">';
     select +='<option value="1" '+selected_1+'>ACTIVO</option>';
@@ -93,8 +95,27 @@ $(".editar").click(function(){
     
 
 });
+
 $(".cancelar").click(function(){
-    
+    var idCliente = $(this).data("idcliente");
+    var nombre = $(this).data("nombre");
+    var email = $(this).data("email");
+    var telefono = $(this).data("telefono");
+    var direccion = $(this).data("direccion");
+    var rfc = $(this).data("rfc");
+    var status = $(this).data("statusmensaje");
+    var color = $(this).data("color");
+    $(".cancelar-"+idCliente).hide();
+    $(".guardar-"+idCliente).hide();
+    $(".editar-"+idCliente).show();
+    $(".eliminar-"+idCliente).show();
+    $(".nombre-"+idCliente).html(nombre);
+    $(".email-"+idCliente).html(email);
+    $(".telefono-"+idCliente).html(telefono);
+    $(".direccion-"+idCliente).html(direccion);
+    $(".rfc-"+idCliente).html(rfc);
+    $(".status"+idCliente).html(status);
+    $(".status"+idCliente).addClass(color);
 
 })
 
