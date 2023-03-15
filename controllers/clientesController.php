@@ -8,6 +8,7 @@ class clientesController
     require_once("models/clientesModel.php");
     $this->clientesModel = new clientesModel();
     $this->urlJS = "../assets/js/clientes.js";
+    session_start();
   }
 
   public function registrar()

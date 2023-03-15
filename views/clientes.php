@@ -1,5 +1,6 @@
+<br>
 <div class="container">
-    <form id="formClientes">
+    <form class="form" id="formClientes">
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" name="nombre" class="form-control nombre" id="nombre" placeholder="Nombre">
@@ -23,3 +24,5 @@
         <button type="submit" class="btn btn-primary registrar">Registrar</button>
     </form>
 </div>
+
+
