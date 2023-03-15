@@ -13,18 +13,13 @@
 <body>
 
     <div class="header-row" id="header-row" style="padding: 0px; overflow:hidden; height:100px;">
-        <!-- container-fluid is the same as container but spans a wider viewport, 
-    it still has padding though so you need to remove this either by adding 
-    another class with no padding or inline as I did below -->
+
         <div class="container-fluid" style="padding: 0px;">
             <div class="row">
-                <!-- You originally has it set up for two columns, remove the second 
-    column as it is unneeded and set the first to always span all 12 columns 
-    even when at its smallest (xs). Set the overflow to hidden so no matter 
-    the height of your image it will never show outside this div-->
+
                 <div class="col-xs-12">
                     <a class="navbar-brand logo" href="index.html">
-                        <!-- place your image here -->
+
                         <img src="https://i0.wp.com/www.sonsanddaughtersofthunder.org/wp-content/uploads/2019/05/cropped-free-blue-curved-banner-template-backgrounds-for-powerpoint-in-banner-background-design-white.jpg?fit=1024%2C220&ssl=1"
                             alt="company logo" style="width: 100%;">
                     </a>
