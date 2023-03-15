@@ -5,6 +5,7 @@ class clientesController
 
   public function __construct()
   {
+    session_start();
     require_once("models/clientesModel.php");
     $this->clientesModel = new clientesModel();
     $this->urlJS = "../assets/js/clientes.js";

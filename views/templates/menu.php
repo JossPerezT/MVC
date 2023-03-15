@@ -1,13 +1,13 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Home</a>
+<nav class="navbar navbar-expand bg-primary text-white">
+  <div class="container">
+    <a class="navbar-brand text-white" href="../home/dashboard">Home</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Clientes
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -17,5 +17,7 @@
         </li>
       </ul>
     </div>
-  </div>
+    <div class="col-13">
+      <?= $_SESSION["nombre_usuario"] ?>
+    </div>
 </nav>

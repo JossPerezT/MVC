@@ -4,7 +4,7 @@
 
     </div>
     <div class="col">
-      <?= $_SESSION["nombre_usuario"] ?>
+      <h1>Bienvenido <?= $_SESSION["nombre_usuario"] ?>  </h1>
     </div>
     <div class="col">
 
