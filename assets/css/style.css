@@ -1,0 +1,38 @@
+html,
+body {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+body {
+    background-color: #f0e44c;
+    background-image: linear-gradient(132deg, #f0e44c 0%, #e2e2e2 50%, #235da5 100%);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.amarillo {
+    background: #F0E44C;
+}
+
+.azulLogin {
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fcfff4+0,e9e9ce+100;Wax+3D+%232 */
+    background: #fcfff4;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #fcfff4 0%, #e9e9ce 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #fcfff4 0%, #e9e9ce 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #fcfff4 0%, #e9e9ce 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfff4', endColorstr='#e9e9ce', GradientType=0);
+    /* IE6-9 */
+
+
+}

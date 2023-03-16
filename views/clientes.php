@@ -1,4 +1,13 @@
 <div class="container">
+    
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col m-5 p-5 shadow-lg p-3 mb-5 bg-body-tertiary border rounded">
     <form id="formClientes">
         <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
@@ -22,4 +31,9 @@
         </div>
         <button type="submit" class="btn btn-primary registrar">Registrar</button>
     </form>
+    </div>
+    <div class="col">
+
+    </div>
+  </div>
 </div>
