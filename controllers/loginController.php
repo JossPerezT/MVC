@@ -13,7 +13,7 @@ class loginController
             if (isset($resp["id_usuario"])) {
                 session_start();
                 $_SESSION = $resp;
-                header("Location:../home/dashboard");
+                header("Location:../home/dashboard");// entra al controlador home y despues al metodo dashboard
             }
         }
         require_once "views/templates/header.php";

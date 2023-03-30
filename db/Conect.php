@@ -1,7 +1,10 @@
 <?php
+//MVC:Cada archvivo esta constituido por clase principal, metodo constructor y metodos o funciones hij@s
 class Conect
 {
-    public function conexion()
+    public function __construct(){
+    }
+    public function conexion() //public porque se accede desde cualquier lado
     {
         $con = mysqli_connect("localhost", "root", "", "MVC");
         if (!$con) {
